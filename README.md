@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+これより前にあるbookers2でコントローラの入れ直しやモデルの名前ミスが頻発したので丸々新しく作り直しました。
 
-Things you may want to cover:
+形はできていたので完成までpushをしていないので過程がありません。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+悩まされたエラー
+リダイレクトを繰り返してエラー落ち
+  ルートの記述の順番がdive_for :usersよりresourcesが上に来ていたせい
+カラムの参照エラー
+  カラムを更新してもdb:migrateだけで反映されずdb:migrate:resetを行った事で解決
