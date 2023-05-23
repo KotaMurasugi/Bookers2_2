@@ -17,28 +17,31 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <div class="container">
           <a class="navbar-brand" href="/">Bookers</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-bs-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <%= link_to root_path, class: "btn text-primary" do %>
-                <i class="fas fa-home"></i>
-                Home
-                <% end %>
-              </li>
 
-              <% if user_signed_in? %>
+                <% if user_signed_in? %>
+
+  　　　　    　     <li class="nav-item mx-1">
+          　　　　    <%= link_to user_path(current_user.id), class: "btn  text-light btn-sm" do %>
+        　　  　　    <i class="fas fa-home"></i>
+          　　　　    Home
+        　　　　      <% end %>
+      　　　　      </li>
+
+
                 <li class="nav-item mx-1">
                   <%= link_to users_path, class: "btn text-warning" do %>
-                 <i class="fas fa-users"></i>
+                  <i class="fas fa-users"></i>
                   Users
                   <% end %>
                 </li>
 
                 <li class="nav-item mx-1">
-                  <%= link_to books_path, class: "btn text-danger text-decoration-none" do %>
+                  <%= link_to books_path, class: "btn text-danger" do %>
                  <i class="fas fa-book-open"></i>
                   Books
                   <% end %>
@@ -50,7 +53,15 @@
                   Log out
                   <% end %>
                 </li>
+
                 <% else %>
+
+       　　　　     <li class="nav-item">
+      　　   　　     <%= link_to root_path, class: "btn text-light btn-sm" do %>
+       　　　　       <i class="fas fa-home"></i>
+      　　　 　　　     Home
+     　　　　         <% end %>
+    　　　　        </li>
 
                 <li class="nav-item">
                   <%= link_to "/home/about", class: "btn text-danger" do %>
@@ -72,6 +83,7 @@
                   Log in
                   <% end %>
                 </li>
+
               <% end %>
             </ul>
           </div>
